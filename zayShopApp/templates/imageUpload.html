@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+  {% include 'header.html' %}
+    <div>
+      <div class="top-part" >
+        <h1>Upload Your Images</h1>
+
+        <form action="" method="post" enctype="multipart/form-data">
+          {% csrf_token %}
+          <input type="file" name="image" id="imgFile" />
+          <input type="submit" value="Upload" class="btn btn-danger" />
+        </form>
+      </div>
+      <div class="row">
+        {% for i in img %}
+        <div
+         class="col-sm-4">
+          <div class="card m-2">
+            <!-- {% if i.photo.url|slice:":1" == '/' %}
+            <img src="{{ i.photo.url }}" class="card-img-top" alt="Image" height="320px" />
+            {% else %}
+            <img src="/{{ i.photo.url }}" class="card-img-top" alt="Image" height="320px" />
+            {% endif %} -->
+           
+            <img src="{{ i.photo.url }}" class="card-img-top" alt="Image" height="320px" />
+            
+            <div class="card-body">
+              <div class="inner-card-body">
+                <small class="card-text text-muted">Uploaded: {{i.date}}</small>
+              <small class="card-text text-muted">Name: {{i.name}}</small>
+              <small class="card-text text-muted">Price: {{i.price}}</small>
+              </div>
+              <form action="{% url 'delete_data' i.id %}" method="post" >
+                {% csrf_token %}
+                <button type="submit" class="btn btn-primary btn-sm mt-2">
+                  Delete
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+
+    {% include 'footer.html' %}
+
+    <!-- Have to put these inside footer when sir give the js files  -->
+    <!-- <script src="{% static 'js/jquery.js' %}" ></script>
+    <script src="{% static 'js/popper.js' %}" ></script>
+    <script src="{% static 'js/bootstrap.js' %}" ></script> -->
+  </body>
+</html>

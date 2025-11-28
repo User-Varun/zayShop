@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+        {% include 'header.html' %}
+    <div class="auth-container">
+        <div class="auth-card">
+            <h2 class="text-center">Create a new account</h2>
+            <form class="auth-form" action="{% url 'regis' %}" method="post">
+                {% csrf_token %}
+                <div class="form-group">
+                    <input class="form-control" type="text" name="cname" placeholder="Full name" required />
+                </div>
+                <div class="form-group">
+                    <input class="form-control" type="text" name="cadd" placeholder="Address" />
+                </div>
+                <div class="form-group">
+                    <input class="form-control" type="email" name="email" placeholder="Email address" required />
+                </div>
+                <div class="form-group">
+                    <input class="form-control" type="text" name="phone" placeholder="Phone (e.g. +1234567890)" />
+                </div>
+                <div class="form-group">
+                    <input class="form-control" type="text" name="unm" placeholder="User name" required />
+                </div>
+                <div class="form-group">
+                    <input class="form-control" type="password" name="pw" placeholder="Password" required />
+                </div>
+                <div class="d-grid">
+                    <button class="btn btn-success auth-submit" type="submit">Create account</button>
+                </div>
+            </form>
+            <div class="auth-footer-note">Already registered? <a href="{% url 'login' %}">Sign in</a></div>
+        </div>
+    </div>
+
+        {% include 'footer.html' %}
+</body>
+
+</html>
+

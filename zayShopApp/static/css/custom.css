@@ -1,0 +1,84 @@
+/*
+Custom Css
+*/
+
+/* Authentication form styles (login / registration) */
+.auth-container {
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 15px;
+}
+.auth-card {
+  width: 100%;
+  max-width: 520px;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 6px 30px rgba(37, 41, 47, 0.12);
+  padding: 28px;
+}
+.auth-card h2 {
+  margin-bottom: 18px;
+  font-weight: 600;
+}
+.inner-card-body {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.auth-form .form-control {
+  border-radius: 8px;
+  padding: 12px 14px;
+  box-shadow: none;
+  border: 1px solid #e6e9ef;
+}
+.auth-form .form-group {
+  margin-bottom: 12px;
+}
+.auth-submit {
+  width: 100%;
+  border-radius: 8px;
+  padding: 10px 14px;
+}
+.auth-footer-note {
+  text-align: center;
+  margin-top: 12px;
+  color: #6c757d;
+  font-size: 0.95rem;
+}
+
+@media (max-width: 576px) {
+  .auth-card {
+    padding: 20px;
+  }
+}
+
+.top-part {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  background-color: #f4f4f4;
+  padding: 2rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-link {
+  padding: 0;
+  margin: 0;
+  display: block;
+}
+
+.card-body-custom {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.ul-custom {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
